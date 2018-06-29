@@ -44,15 +44,28 @@ end
 
 #test 8 all pets by breed
 
-# def pets_by_breed(pet_shop, breed)
-#   breed_type =[]
-#   for pet in pet_shop
-#     if pet[:pets][:breed] == breed
-#       breed_type.push(pet)
-#     end
-#   end
-#   return breed_type
-# end
+def pets_by_breed(pet_shop, breed)
+  breed_type =[]
+  for pet in pet_shop[:pets]
+    if pet[:breed] == breed
+      breed_type.push(pet)
+    end
+  end
+  return breed_type
+end
+
+#test 9 all pets no breed
+
+def pets_by_breed(pet_shop, breed)
+  breed_type =[]
+  for pet in pet_shop[:pets]
+    if pet[:breed] == breed
+      breed_type.push(pet)
+    end
+  end
+  return breed_type
+end
+
 # #17 add pet to the customer
 # # def add_pet_to_customer (customer, new_pet)
 # #   customers[0] << [@new_pet]
