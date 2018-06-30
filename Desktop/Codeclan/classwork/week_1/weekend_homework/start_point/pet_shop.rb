@@ -130,6 +130,6 @@ end
 #
 # TEST 17
 def add_pet_to_customer(customer, new_pet)
-   customer[@customers].push(new_pet)
-   return customer
+   customer[:pets].push(new_pet)
+   return customer[:pets]
  end
