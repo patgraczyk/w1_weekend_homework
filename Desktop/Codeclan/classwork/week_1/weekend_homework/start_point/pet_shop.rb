@@ -1,49 +1,61 @@
-#1 test_pet_shop_name
+#TEST 1
 
 def pet_shop_name (name)
   return name[:name]
 end
 
-# #2 test_total_cash
-#
+# #TEST 2
+# #
 def total_cash(place)
   return place[:admin][:total_cash]
 end
+# #
+# # TEST 3
+# #
+def add_or_remove_cash(pet_shop, amount)
+  return pet_shop[:admin][:total_cash] += amount
+end
 #
-# #3test_add_or_remove_cash__add
+# #TEST 4
 #
 def add_or_remove_cash(pet_shop, amount)
   return pet_shop[:admin][:total_cash] += amount
 end
-
-#4 test_add_or_remove_cash__remove
-
-def add_or_remove_cash(pet_shop, amount)
-  return pet_shop[:admin][:total_cash] += amount
-end
-
-#5 pets sold
-
+#
+# #TEST 5
+#
 def pets_sold (place)
   return place[:admin][:pets_sold]
 end
-
-
-# 6 increase_pets_sold
-
+#
+#
+# #TEST 6
+#
 def increase_pets_sold(pet_shop, amount)
   return pet_shop[:admin][:pets_sold]+=2
 end
-
-# # 7 test_stock_count
+#
+# # TEST 7
 def stock_count(place)
   return @pet_shop[:pets].length
 end
+# #
 #
-
-
-#test 8 all pets by breed
-
+#
+# #TEST 8
+#
+def pets_by_breed(pet_shop, breed)
+  breed_type =[]
+  for pet in pet_shop[:pets]
+    if pet[:breed] == breed
+      breed_type.push(pet)
+    end
+  end
+  return breed_type
+end
+#
+# #TEST 9
+#
 def pets_by_breed(pet_shop, breed)
   breed_type =[]
   for pet in pet_shop[:pets]
@@ -54,39 +66,29 @@ def pets_by_breed(pet_shop, breed)
   return breed_type
 end
 
-#test 9 all pets no breed
 
-def pets_by_breed(pet_shop, breed)
-  breed_type =[]
-  for pet in pet_shop[:pets]
-    if pet[:breed] == breed
-      breed_type.push(pet)
-    end
-  end
-  return breed_type
-end
 
-#10 find pet by name returns nill
-
+#TEST 10
+#
 # def find_pet_by_name(pet_shop, name)
 #   for pet in pet_shop[:pets][:name]
 #     if pet[:name] == pet
-#       return
 #     end
 #   end
 # end
 
-#11 find pet by name returns nill
+#TEST 11
 
 def find_pet_by_name(pet_shop, name)
   for pet in pet_shop[:pets]
     if pet[:name] == pet
+      return pet
     else return nil
   end
 end
 end
 
-# 12 def test_remove_pet_by_name
+#TEST 12
 
 def remove_pet_by_name(pet_shop, name)
   for pet in pet_shop[:pets]
@@ -96,30 +98,38 @@ def remove_pet_by_name(pet_shop, name)
 end
 end
 
-#13 add pet to stock
+# #TEST 13
 
 def add_pet_to_stock(pet_shop, new_pet)
-   pet_shop[:pets].push(new_pet)
+  pet_shop[:pets] << new_pet
+  return pet_shop[:pets].length
 end
 
-#14 customer cash
-
-# def customer_cash(customers[])
-#     return customers[][:cash]
+# def add_pet_to_stock(pet_shop, new_pet)
+#    pet_shop[:pets].push(new_pet)
+#    return pet_shop[:pets].length
 # end
 
-#15 remove customer cash
+#TEST 14
+
+def customer_cash(customers)
+    return customers[:cash]
+end
+
+# #TEST 15
 def remove_customer_cash (customer, amount)
   customer[:cash] -= amount
 end
-
-# #15 customer pet count
-# def customer_pet_count (customers [value])
-
-
-# #16 add pet to the customer
-
-def add_pet_to_customer (customer, new_pet)
-  customer[@customers].push(new_pet)
-  return @customers[0][:pets].length
+#
+#
+# #TEST 16
+def customer_pet_count(customer)
+  return customer[:pets].length
 end
+
+#
+# TEST 17
+def add_pet_to_customer(customer, new_pet)
+   customer[@customers].push(new_pet)
+   return customer
+ end
