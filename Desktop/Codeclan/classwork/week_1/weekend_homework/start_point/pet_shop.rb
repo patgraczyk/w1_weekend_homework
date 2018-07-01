@@ -144,4 +144,13 @@ def customer_can_afford_pet (customer,new_pet)
     end
   end
 
-#TEST 20
+#TEST 20 + 21 + 22
+
+def sell_pet_to_customer(pet_shop, pet, customer)
+  if pet != nil && customer[:cash] >= pet[:price]
+    # customer[:pets].push(pet)
+    # pet_shop[:admin][:pets_sold] += 1
+    customer[:cash] -= pet[:price]
+    pet_shop[:admin][:total_cash] += pet[:price]
+  end
+end
