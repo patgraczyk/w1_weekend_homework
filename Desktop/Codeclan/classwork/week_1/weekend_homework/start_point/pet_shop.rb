@@ -154,7 +154,6 @@ def sell_pet_to_customer(pet_shop, pet, customer)
 end
 
 # def sell_pet_to_customer(pet_shop, pet, customer)
-#   if pet == pet_shop[:pets][:name]
 #   if pet != nil && customer[:cash] >= pet[:price]
 #     # customer[:pets].push(pet)
 #     # pet_shop[:admin][:pets_sold] += 1
