@@ -146,18 +146,19 @@ def customer_can_afford_pet (customer,new_pet)
 
 #TEST 20 + 21 + 22
 
-def sell_pet_to_customer(pet_shop, pet, customer)
-  if pet != nil
-    customer[:pets].push(pet)
-    customer[:cash] -= pet[:price]
-  end
-end
-
+# Separate function to test -pet_found
 # def sell_pet_to_customer(pet_shop, pet, customer)
-#   if pet != nil && customer[:cash] >= pet[:price]
-#     # customer[:pets].push(pet)
-#     # pet_shop[:admin][:pets_sold] += 1
+#   if pet != nil
+#     customer[:pets].push(pet)
 #     customer[:cash] -= pet[:price]
-#     pet_shop[:admin][:total_cash] += pet[:price]
 #   end
 # end
+
+def sell_pet_to_customer(pet_shop, pet, customer)
+  if pet != nil && customer[:cash] >= pet[:price]
+    customer[:pets].push(pet)
+    pet_shop[:admin][:pets_sold] += 1
+    customer[:cash] -= pet[:price]
+    pet_shop[:admin][:total_cash] += pet[:price]
+  end
+end
